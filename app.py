@@ -17,18 +17,17 @@ st.set_page_config(page_title="MindBridge AI", layout="centered")
 st.markdown(
     """
     <style>
-    /* 1. Sidebar Arrow Customization */
-    /* Sidebar එක ඇරලා තියෙද්දී පේන ඊතලේ */
-    [data-testid="stSidebarCollapseButton"] svg {
-        color: darkblue !important;
-        fill: darkblue !important;
+    /* 1. Global Page Style */
+    .stApp {
+        background-color: #f4f7f6 !important; 
     }
-    
-    /* Sidebar එක වහලා තියෙද්දී පේන ඊතලේ */
-    [data-testid="collapsedControl"] svg {
-        color: darkblue !important;
-        fill: darkblue !important;
+    .block-container {
+        padding-top: 2rem !important; 
     }
+    header[data-testid="stHeader"] {
+        background-color: transparent !important; 
+    }
+
     
 
     /* 2. Typography */
