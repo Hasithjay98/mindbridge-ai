@@ -5,3 +5,5 @@ lime
 scikit-learn
 pandas
 numpy
+gspread
+oauth2client
