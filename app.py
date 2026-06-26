@@ -240,7 +240,7 @@ with st.container():
     st.markdown("### Expert Feedback")
     st.caption("AI ප්‍රතිඵලය නිවැරදි නොවේ නම්, කරුණාකර නිවැරදි තත්ත්වය පහතින් යාවත්කාලීන කරන්න.")
     
-    is_professional = st.checkbox("ඔබ මානසික සෞඛ්‍ය වෘත්තිකයෙක් නම් හරි සලකුණ ලකුණු කරන්න (Tick here if you are a Mental Health Professional)")
+    is_professional = st.checkbox("ඔබ මානසික සෞඛ්‍ය වෘත්තිකයෙක් නම් හරි සලකුණ ලකුණු කරන්න \n(Tick here if you are a Mental Health Professional)")
     
     with st.form("feedback_form"):
         doc_name = ""
