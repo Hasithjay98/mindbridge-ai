@@ -20,13 +20,11 @@ st.markdown(
 
 
     <style>
-    [data-testid="stSidebarCollapseButton"] svg,
-    [data-testid="stSidebarCollapseButton"] path,
-    [data-testid="collapsedControl"] svg,
-    [data-testid="collapsedControl"] path {
+    [data-testid="stSidebarCollapseButton"], 
+    [data-testid="stSidebarCollapseButton"] *,
+    [data-testid="collapsedControl"],
+    [data-testid="collapsedControl"] * {
         color: #005A9C !important;
-        fill: #005A9C !important;
-        stroke: #005A9C !important;
     }
     
     /* 1. Global Page Style */
