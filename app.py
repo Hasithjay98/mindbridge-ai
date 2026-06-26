@@ -276,25 +276,25 @@ with st.container():
                 ai_predicted_label = labels_english.get(st.session_state.get('last_prediction', 0), "Unknown")
                 
                 try:
-                creds_dict = dict(st.secrets["gcp_service_account"])
-                scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-                creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-                client = gspread.authorize(creds)
+                    creds_dict = dict(st.secrets["gcp_service_account"])
+                    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+                    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+                    client = gspread.authorize(creds)
                 
-                sheet = client.open("MindBridge_Feedback").sheet1
+                    sheet = client.open("MindBridge_Feedback").sheet1
                 
-                row_to_add = [
-                    timestamp, user_input, ai_predicted_label, correct_label, 
-                    "Yes" if is_professional else "No", 
-                    doc_name if is_professional else "N/A", 
-                    doc_profession if is_professional else "N/A", 
-                    doc_contact if is_professional else "N/A", 
-                    comments
-                ]
-                sheet.append_row(row_to_add)
-                st.success("Feedback submitted successfully to the system!")
-            except Exception as e:
-                st.error(f"Error submitting feedback: {e}")
+                    row_to_add = [
+                        timestamp, user_input, ai_predicted_label, correct_label, 
+                        "Yes" if is_professional else "No", 
+                        doc_name if is_professional else "N/A", 
+                        doc_profession if is_professional else "N/A", 
+                        doc_contact if is_professional else "N/A", 
+                        comments
+                    ]
+                    sheet.append_row(row_to_add)
+                    st.success("Feedback submitted successfully to the system!")
+                except Exception as e:
+                    st.error(f"Error submitting feedback: {e}")
 
 #DISCLAIMER
 st.markdown("---")
