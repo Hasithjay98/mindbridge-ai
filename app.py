@@ -20,14 +20,8 @@ st.markdown(
 
 
     <style>
-    /* Sidebar ඊතලේ පාට වෙනස් කිරීම (Stronger CSS) */
     [data-testid="stSidebarCollapseButton"] svg,
-    [data-testid="stSidebarCollapseButton"] path {
-        color: white !important;
-        fill: white !important !important;
-        stroke: white !important;
-    }
-    
+    [data-testid="stSidebarCollapseButton"] path,
     [data-testid="collapsedControl"] svg,
     [data-testid="collapsedControl"] path {
         color: #005A9C !important;
