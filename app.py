@@ -14,18 +14,24 @@ from oauth2client.service_account import ServiceAccountCredentials
 st.set_page_config(page_title="MindBridge AI", layout="centered")
 
 # CSS STYLING
-st.markdown("""
+st.markdown(
+    """
     <style>
-    /* 1. Global Page Style */
-    .stApp {
-        background-color: #f4f7f6 !important; 
+    /* Sidebar එක ඇරලා තියෙද්දී පේන ඊතලේ */
+    [data-testid="stSidebarCollapseButton"] svg {
+        color: darkblue !important;
+        fill: darkblue !important;
     }
-    .block-container {
-        padding-top: 2rem !important; 
+    
+    /* Sidebar එක වහලා තියෙද්දී පේන ඊතලේ */
+    [data-testid="collapsedControl"] svg {
+        color: darkblue !important;
+        fill: darkblue !important;
     }
-    header[data-testid="stHeader"] {
-        background-color: transparent !important; 
-    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     /* 2. Typography */
     h1, h2, h3 {
