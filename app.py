@@ -159,7 +159,7 @@ st.markdown("### Mental Health Text Analyzer")
 
 @st.cache_resource
 def load_model():
-    model_path = "./mindbridge_final_model"
+    model_path = "EshanHasitha/mindbridge-xlm-robertamodel"
     tokenizer = XLMRobertaTokenizer.from_pretrained(model_path)
     model = XLMRobertaForSequenceClassification.from_pretrained(model_path)
     return tokenizer, model
