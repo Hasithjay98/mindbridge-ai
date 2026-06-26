@@ -17,6 +17,19 @@ st.set_page_config(page_title="MindBridge AI", layout="centered")
 st.markdown(
     """
     <style>
+
+
+    /* Sidebar ඊතලේ පාට වෙනස් කිරීම */
+    [data-testid="stSidebarCollapseButton"] svg {
+        color: white !important;
+        fill: white !important;
+    }
+    
+    [data-testid="collapsedControl"] svg {
+        color: #005A9C !important;
+        fill: #005A9C !important;
+    }
+    
     /* 1. Global Page Style */
     .stApp {
         background-color: #f4f7f6 !important; 
