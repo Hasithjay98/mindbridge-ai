@@ -47,7 +47,7 @@ st.markdown(
         background-color: #005A9C !important;
     }
     [data-testid="stSidebar"] * {
-        color: white !important; 
+        color: #042238 !important; 
     }
 
     /* 4. Buttons */
