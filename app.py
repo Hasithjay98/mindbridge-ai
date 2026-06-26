@@ -27,13 +27,8 @@ st.markdown(
     header[data-testid="stHeader"] {
         background-color: transparent !important; 
     }
-    [data-testid="stSidebarCollapseButton"] svg,
-    [data-testid="collapsedControl"] svg {
-        color: #005A9C !important;
-        fill: #005A9C !important;
-    }
+   
   
-    
     /* 2. Typography */
     h1, h2, h3 {
         color: #005A9C !important; 
