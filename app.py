@@ -17,6 +17,7 @@ st.set_page_config(page_title="MindBridge AI", layout="centered")
 st.markdown(
     """
     <style>
+    /* 1. Sidebar Arrow Customization */
     /* Sidebar එක ඇරලා තියෙද්දී පේන ඊතලේ */
     [data-testid="stSidebarCollapseButton"] svg {
         color: darkblue !important;
