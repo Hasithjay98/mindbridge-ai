@@ -28,10 +28,7 @@ st.markdown(
         color: darkblue !important;
         fill: darkblue !important;
     }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+    
 
     /* 2. Typography */
     h1, h2, h3 {
