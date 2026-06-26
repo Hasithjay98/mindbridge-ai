@@ -165,7 +165,7 @@ with st.sidebar:
     st.write("2. **'Analyze & Explain'** බොත්තම ඔබන්න.")
     st.write("3. ප්‍රතිඵලය සහ AI එකට බලපෑ වචන අධ්‍යයනය කරන්න.")
     st.markdown("---")
-    st.caption("Developed by: Eshan Hasitha")
+    
 
 # MAIN APP
 st.markdown("<h1>MindBridge AI</h1>", unsafe_allow_html=True)
@@ -311,3 +311,5 @@ with st.container():
 #DISCLAIMER
 st.markdown("---")
 st.caption("**Disclaimer:** MindBridge AI is an academic research tool and NOT a substitute for professional medical advice, diagnosis, or treatment. If you are experiencing a mental health crisis, please contact emergency services or call **1333** immediately.")
+# Footer
+st.markdown("<div style='text-align: center; margin-top: 20px;'><p style='color: #888888; font-size: 14px;'>Design and developed by Eshan Hasitha | FYP Project 2026</p></div>", unsafe_allow_html=True)
