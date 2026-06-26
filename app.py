@@ -130,7 +130,7 @@ st.markdown(
         margin-bottom: 25px;
     }
     [data-testid="stExpander"] summary {
-        background-color: #f0f7ff !important; 
+        background-color: #0a192b !important; 
         border-radius: 8px 8px 0 0 !important;
         padding: 15px !important;
     }
