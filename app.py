@@ -7,6 +7,8 @@ import streamlit.components.v1 as components
 import csv
 import os
 from datetime import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 # Page Configuration
 st.set_page_config(page_title="MindBridge AI", layout="centered")
@@ -273,28 +275,26 @@ with st.container():
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ai_predicted_label = labels_english.get(st.session_state.get('last_prediction', 0), "Unknown")
                 
-                file_name = "expert_feedback.csv"
-                file_exists = os.path.isfile(file_name)
+                try:
+                creds_dict = dict(st.secrets["gcp_service_account"])
+                scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+                creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+                client = gspread.authorize(creds)
                 
-                with open(file_name, mode="a", newline="", encoding="utf-8") as file:
-                    writer = csv.writer(file)
-                    
-                    if not file_exists:
-                        writer.writerow(["Date_Time", "Input_Text", "AI_Prediction", "Expert_Label", "Is_Professional", "Doctor_Name", "Profession", "Contact_Number", "Comments"])
-                    
-                    writer.writerow([
-                        timestamp, 
-                        user_input, 
-                        ai_predicted_label, 
-                        correct_label, 
-                        "Yes" if is_professional else "No", 
-                        doc_name if is_professional else "N/A", 
-                        doc_profession if is_professional else "N/A", 
-                        doc_contact if is_professional else "N/A", 
-                        comments
-                    ])
+                sheet = client.open("MindBridge_Feedback").sheet1
                 
-                st.success("ඔබගේ ප්‍රතිචාරය සාර්ථකව පද්ධතියට ඇතුළත් කරන ලදී!")
+                row_to_add = [
+                    timestamp, user_input, ai_predicted_label, correct_label, 
+                    "Yes" if is_professional else "No", 
+                    doc_name if is_professional else "N/A", 
+                    doc_profession if is_professional else "N/A", 
+                    doc_contact if is_professional else "N/A", 
+                    comments
+                ]
+                sheet.append_row(row_to_add)
+                st.success("Feedback submitted successfully to the system!")
+            except Exception as e:
+                st.error(f"Error submitting feedback: {e}")
 
 #DISCLAIMER
 st.markdown("---")
